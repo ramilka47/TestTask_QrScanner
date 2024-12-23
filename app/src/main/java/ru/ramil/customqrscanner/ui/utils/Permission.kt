@@ -17,7 +17,9 @@ fun PermissionCamera(
 
     cameraPermissionState.permissions.forEach {
         if (it.hasPermission){
-            onPermissionGranted(it.permission)
+            SideEffect {
+                onPermissionGranted(it.permission)
+            }
         } else {
             SideEffect {
                 it.launchPermissionRequest()

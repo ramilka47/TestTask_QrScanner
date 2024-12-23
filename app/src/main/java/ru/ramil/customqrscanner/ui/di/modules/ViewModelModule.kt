@@ -5,10 +5,8 @@ import androidx.lifecycle.ViewModelProvider
 import dagger.Binds
 import dagger.MapKey
 import dagger.Module
-import dagger.Provides
 import dagger.multibindings.IntoMap
 import ru.ramil.customqrscanner.ui.view_models.ActivityViewModel
-import ru.ramil.customqrscanner.ui.view_models.CustomQrScannerViewModel
 import ru.ramil.customqrscanner.ui.view_models.HomeViewModel
 import ru.ramil.customqrscanner.ui.view_models.MainViewModel
 import ru.ramil.customqrscanner.ui.view_models.SplashViewModel
@@ -22,12 +20,6 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(ActivityViewModel::class)
     internal abstract fun bindActivityViewModel(activityViewModel: ActivityViewModel) :
-            ViewModel
-
-    @Binds
-    @IntoMap
-    @ViewModelKey(CustomQrScannerViewModel::class)
-    internal abstract fun bindCustomQrScannerViewModel(customQrScannerViewModel: CustomQrScannerViewModel) :
             ViewModel
 
     @Binds
